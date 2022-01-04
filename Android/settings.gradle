@@ -1,0 +1,17 @@
+//import org.gradle.api.initialization.resolve.RepositoriesMode
+//
+//dependencyResolutionManagement {
+//    repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)
+//    repositories {
+//        google()
+//        mavenCentral()
+//        jcenter() // Warning: this repository is going to shut down soon
+//    }
+//}
+rootProject.name = "Android"
+include ':app'                                  // assumed existing content
+setBinding(new Binding([gradle: this]))                                // new
+evaluate(new File(                                                     // new
+        settingsDir.parentFile,                                              // new
+        'flutter_module/.android/include_flutter.groovy'                         // new
+))
